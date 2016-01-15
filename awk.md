@@ -1,8 +1,9 @@
-# linuxcmd
+##<a name="index"/>目录
+* [基本](#基本)
+* [函数](#函数)
+* [坑](#坑)
 
-[TOC]
-
-### awk 基本
+###<a name="基本"/>基本
 ```shell
 cat file1
 a 1
@@ -21,7 +22,8 @@ BEGIN{} | 括号内的代码在每次读文件之前执行
 END{}   | 括号内的代码在处理完文件之后执行
 
 
-### awk 函数
+
+###<a name="函数"/>函数
 
 ```shell
 
@@ -31,6 +33,6 @@ awk -F' ' 'function fun(arr){return arr[1]+arr[2];}BEGIN{}{print $2;}END{}' file
 
 ```
 
-### awk 坑
 
+###<a name="坑"/>坑
 1. 没有not的语法 所以  if (i not in array) 是错误的，可以用 if(!(i in array))来替代
