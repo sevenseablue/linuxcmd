@@ -36,3 +36,13 @@ awk -F' ' 'function fun(arr){return arr[1]+arr[2];}BEGIN{}{print $2;}END{}' file
 
 ###<a name="坑"/>坑
 1. 没有not的语法 所以  if (i not in array) 是错误的，可以用 if(!(i in array))来替代
+
+
+###<a name="经典"/>经典
+```
+  awk -F' |,' -v f1=$f1 'function add(i1, i2){return i1+i2}
+  BEGIN{while (getline x<f1>0){split(x, a, " ");u[a[1]]=a[2];}}
+  {if(!($2 in u)){print $2;}}
+  END{for(i in u){print u[i]}}'
+
+```
